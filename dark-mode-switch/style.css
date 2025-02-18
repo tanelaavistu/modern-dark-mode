@@ -1,0 +1,34 @@
+/* This is for when your default theme is Light Mode */
+[data-theme="dark"], [data-theme="dark"] .wp-block-image {
+   --wp--preset--color--base: #ffffff;
+   --wp--preset--color--contrast: #161718;
+   --wp--preset--color--accent-1: #ff8807;
+--wp--preset--color--accent-2: #0056b3;
+--wp--preset--color--accent-3: #1c232e;
+--wp--preset--color--accent-4: #696969;
+--wp--preset--color--accent-5: #c4dcf5;
+--wp--preset--color--accent-6: #2a5788;
+}
+
+[data-theme="dark"] #header-logo, 
+[data-theme="dark"] #footer-logo { 
+    filter: invert(1); 
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"], [data-theme="auto"] .wp-block-image {
+    --wp--preset--color--base: #ffffff;
+    --wp--preset--color--contrast: #161718;
+    --wp--preset--color--accent-1: #ff8807;
+    --wp--preset--color--accent-2: #0056b3;
+    --wp--preset--color--accent-3: #1c232e;
+    --wp--preset--color--accent-4: #696969;
+    --wp--preset--color--accent-5: #c4dcf5;
+    --wp--preset--color--accent-6: #2a5788;
+  }
+
+  [data-theme="auto"] #header-logo,
+  [data-theme="auto"] #footer-logo {
+    filter: invert(1);
+  }
+}
