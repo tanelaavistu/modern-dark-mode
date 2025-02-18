@@ -1,4 +1,4 @@
-<!-- For Light Theme with Auto Option -->
+<!-- Light/Dark Switch Header Script -->
 <script>
     (function() {
         let theme = localStorage.getItem('astrograaf_theme_pref');
