@@ -1,69 +1,70 @@
-/* Light Theme */
-[data-theme="light"], [data-theme="light"] .wp-block-image {
-   --wp--preset--color--base: #ffffff;
-   --wp--preset--color--contrast: #161718;
-   --wp--preset--color--accent-1: #ff8807;
---wp--preset--color--accent-2: #0056b3;
---wp--preset--color--accent-3: #1c232e;
---wp--preset--color--accent-4: #696969;
---wp--preset--color--accent-5: #c4dcf5;
---wp--preset--color--accent-6: #2a5788;
+/* Light Theme Colors */
+:root {
+  --custom-base: #ffffff;
+  --custom-contrast: #161718;
+  --custom-accent-1: #ff8807;
+  --custom-accent-2: #0056b3;
+  --custom-accent-3: #1c232e;
+  --custom-accent-4: #696969;
+  --custom-accent-5: #c4dcf5;
+  --custom-accent-6: #2a5788;
 }
 
-[data-theme="light"] #header-logo, 
-[data-theme="light"] #footer-logo { 
-    filter: invert(1); 
+/* Explicit Light Theme */
+[data-theme="light"], 
+[data-theme="light"] .wp-block-image {
+  --wp--preset--color--base: var(--custom-base);
+  --wp--preset--color--contrast: var(--custom-contrast);
+  --wp--preset--color--accent-1: var(--custom-accent-1);
+  --wp--preset--color--accent-2: var(--custom-accent-2);
+  --wp--preset--color--accent-3: var(--custom-accent-3);
+  --wp--preset--color--accent-4: var(--custom-accent-4);
+  --wp--preset--color--accent-5: var(--custom-accent-5);
+  --wp--preset--color--accent-6: var(--custom-accent-6);
 }
 
+[data-theme="light"] #header-logo img, 
+[data-theme="light"] #footer-logo img { 
+  filter: invert(1); 
+}
+
+[data-theme="light"] .astro-hide-on-light {
+   display: none;
+}
+
+
+/* Light Theme when System Preference is Light */
 @media (prefers-color-scheme: light) {
-  [data-theme="auto"], [data-theme="auto"] .wp-block-image {
-    --wp--preset--color--base: #ffffff;
-    --wp--preset--color--contrast: #161718;
-    --wp--preset--color--accent-1: #ff8807;
-    --wp--preset--color--accent-2: #0056b3;
-    --wp--preset--color--accent-3: #1c232e;
-    --wp--preset--color--accent-4: #696969;
-    --wp--preset--color--accent-5: #c4dcf5;
-    --wp--preset--color--accent-6: #2a5788;
+  html:not([data-theme="dark"]):not([data-theme="light"]), 
+  html:not([data-theme="dark"]):not([data-theme="light"]) .wp-block-image {
+    --wp--preset--color--base: var(--custom-base);
+    --wp--preset--color--contrast: var(--custom-contrast);
+    --wp--preset--color--accent-1: var(--custom-accent-1);
+    --wp--preset--color--accent-2: var(--custom-accent-2);
+    --wp--preset--color--accent-3: var(--custom-accent-3);
+    --wp--preset--color--accent-4: var(--custom-accent-4);
+    --wp--preset--color--accent-5: var(--custom-accent-5);
+    --wp--preset--color--accent-6: var(--custom-accent-6);
   }
 
-  [data-theme="auto"] #header-logo,
-  [data-theme="auto"] #footer-logo {
+  html:not([data-theme="dark"]):not([data-theme="light"]) #header-logo img,
+  html:not([data-theme="dark"]):not([data-theme="light"]) #footer-logo img {
     filter: invert(1);
   }
+
+html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-light {
+   display: none;
+}
 }
 
-/* Dark Theme */
-[data-theme="dark"], [data-theme="dark"] .wp-block-image {
-   --wp--preset--color--base: #ffffff;
-   --wp--preset--color--contrast: #161718;
-   --wp--preset--color--accent-1: #ff8807;
---wp--preset--color--accent-2: #0056b3;
---wp--preset--color--accent-3: #1c232e;
---wp--preset--color--accent-4: #696969;
---wp--preset--color--accent-5: #c4dcf5;
---wp--preset--color--accent-6: #2a5788;
+/* Explicit Dark Theme */
+[data-theme="dark"] .astro-hide-on-dark {
+   display: none;
 }
 
-[data-theme="dark"] #header-logo, 
-[data-theme="dark"] #footer-logo { 
-    filter: invert(0); 
-}
-
+/* Modifications when System Preference is Dark */
 @media (prefers-color-scheme: dark) {
-  [data-theme="auto"], [data-theme="auto"] .wp-block-image {
-    --wp--preset--color--base: #ffffff;
-    --wp--preset--color--contrast: #161718;
-    --wp--preset--color--accent-1: #ff8807;
-    --wp--preset--color--accent-2: #0056b3;
-    --wp--preset--color--accent-3: #1c232e;
-    --wp--preset--color--accent-4: #696969;
-    --wp--preset--color--accent-5: #c4dcf5;
-    --wp--preset--color--accent-6: #2a5788;
-  }
-
-  [data-theme="auto"] #header-logo,
-  [data-theme="auto"] #footer-logo {
-    filter: invert(0);
-  }
+html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-dark {
+   display: none;
+}
 }
