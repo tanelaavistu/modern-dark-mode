@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function getCurrentTheme() {
         let themeAttr = document.documentElement.getAttribute("data-theme");
 
-        if (themeAttr === "auto" || !themeAttr) {
+        if (themeAttr !== "light" && themeAttr !== "dark") {
             return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         }
 
@@ -64,10 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
  	   iconToggle.addEventListener("keydown", handleKeyPress);
 	}
 
-    window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", () => {
-        if (document.documentElement.getAttribute("data-theme") === "auto") {
-            updateButton(getCurrentTheme());
-        }
-    });
+	window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", () => {
+    	let themeAttr = document.documentElement.getAttribute("data-theme");
+
+    	if (themeAttr !== "light" && themeAttr !== "dark") {
+      	  updateButton(getCurrentTheme());
+    }
+});
+
 });
 </script>
