@@ -1,6 +1,6 @@
-# Modern Dark Mode
+# Modern Dark Mode WordPress
 
-A sleek, efficient dark/light mode switcher plugin for WordPress websites.
+A sleek, efficient dark/light mode switcher plugin for WordPress websites. Works best with Twenty Twenty-Five Block Editor theme.
 
 
 ## Features
@@ -11,11 +11,28 @@ A sleek, efficient dark/light mode switcher plugin for WordPress websites.
 
 ## Installation
 
-1. Set the head script
-2. Set the body script
-3. Add CSS to your custom CSS.
-4. Add buttons as you like.
+1. Add head and body scripts to child theme functions.php
+2. Add CSS to your custom CSS.
+3. Add buttons as you like.
 
+## Example functions.php
+
+```
+function light_dark_header() {
+?>
+    <!-- Your header <script> code here -->
+<?php
+}
+add_action('wp_head', 'light_dark_header');
+
+function light_dark_body()
+{
+?>
+    <!-- Your body <script> code here -->
+<?php
+}
+add_action('wp_body_open', 'light_theme_switch', 5);
+```
 
 
 ## Changelog
