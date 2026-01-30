@@ -23,3 +23,7 @@ A sleek, efficient dark/light mode switcher plugin for WordPress websites.
 ### 1.0
 
 - Initial release with dark mode toggle functionality.
+
+### 1.1
+
+- Refactor and added the theme reset functionality
