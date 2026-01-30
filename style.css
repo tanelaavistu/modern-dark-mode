@@ -70,3 +70,40 @@ html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-dark {
    display: none;
 }
 }
+
+#icon-toggle, #theme-toggle {
+   width: 24px;
+   display: grid;
+   place-items: center;
+   height: 100%;
+   color: var(--wp--preset--color--accent-4);
+   padding: 3px;
+}
+
+#icon-toggle:hover,
+#theme-toggle:hover,
+#theme-reset:hover {
+   color: color-mix(in srgb, var(--wp--preset--color--accent-4) 85%, transparent);
+   background-color: color-mix(in srgb, var(--wp--preset--color--accent-4) 10%, transparent);
+   border-radius: 5px;
+    cursor: pointer;
+}
+
+#theme-reset {
+    width: 16px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--wp--preset--color--accent-4);
+    padding: 3px;
+    min-height: 16px;
+    margin-left: 4px;
+}
+
+#theme-reset svg {
+    stroke-width: 1.8px;
+}
+
+html:not([data-theme]) #theme-reset {
+  visibility: hidden;
+}
