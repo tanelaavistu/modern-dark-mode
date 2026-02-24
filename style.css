@@ -1,91 +1,96 @@
-/* This CSS is for when the website default mode is dark */
-
-/* Light Theme Colors */
+/* Dark Theme Colors */
 :root {
-  --custom-base: #ffffff;
-  --custom-contrast: #161718;
-  --custom-accent-1: #ff8807;
-  --custom-accent-2: #0056b3;
-  --custom-accent-3: #1c232e;
-  --custom-accent-4: #696969;
-  --custom-accent-5: #c4dcf5;
-  --custom-accent-6: #2a5788;
+    --dark-base: #161718;
+    --dark-contrast: #ffffff;
+    --dark-accent-1: #ff8807;
+    --dark-accent-2: #3987d9;
+    --dark-accent-3: #86a6c8;
+    --dark-accent-4: #CBCBCB;
+    --dark-accent-5: #1c232e;
+    --dark-accent-6: #2a5788;
+    --dark-accent-7: #232323;
 }
 
 /* Explicit Light Theme */
-[data-theme="light"], 
+[data-theme="light"],
 [data-theme="light"] .wp-block-image {
-  --wp--preset--color--base: var(--custom-base);
-  --wp--preset--color--contrast: var(--custom-contrast);
-  --wp--preset--color--accent-1: var(--custom-accent-1);
-  --wp--preset--color--accent-2: var(--custom-accent-2);
-  --wp--preset--color--accent-3: var(--custom-accent-3);
-  --wp--preset--color--accent-4: var(--custom-accent-4);
-  --wp--preset--color--accent-5: var(--custom-accent-5);
-  --wp--preset--color--accent-6: var(--custom-accent-6);
+    --wp--preset--color--base: var(--dark-base);
+    --wp--preset--color--contrast: var(--dark-contrast);
+    --wp--preset--color--accent-1: var(--dark-accent-1);
+    --wp--preset--color--accent-2: var(--dark-accent-2);
+    --wp--preset--color--accent-3: var(--dark-accent-3);
+    --wp--preset--color--accent-4: var(--dark-accent-4);
+    --wp--preset--color--accent-5: var(--dark-accent-5);
+    --wp--preset--color--accent-6: var(--dark-accent-6);
 }
 
-[data-theme="light"] #header-logo img, 
-[data-theme="light"] #footer-logo img { 
-  filter: invert(1); 
+[data-theme="light"] #header-logo img,
+[data-theme="light"] #footer-logo img {
+    filter: invert(1);
 }
 
 [data-theme="light"] .astro-hide-on-light {
-   display: none;
+    display: none;
 }
 
 
-/* Light Theme when System Preference is Light */
+/* Dark Theme when System Preference is Dark */
+@media (prefers-color-scheme: dark) {
+
+    html:not([data-theme="dark"]):not([data-theme="light"]),
+    html:not([data-theme="dark"]):not([data-theme="light"]) .wp-block-image {
+        --wp--preset--color--base: var(--dark-base);
+        --wp--preset--color--contrast: var(--dark-contrast);
+        --wp--preset--color--accent-1: var(--dark-accent-1);
+        --wp--preset--color--accent-2: var(--dark-accent-2);
+        --wp--preset--color--accent-3: var(--dark-accent-3);
+        --wp--preset--color--accent-4: var(--dark-accent-4);
+        --wp--preset--color--accent-5: var(--dark-accent-5);
+        --wp--preset--color--accent-6: var(--dark-accent-6);
+    }
+
+}
+
 @media (prefers-color-scheme: light) {
-  html:not([data-theme="dark"]):not([data-theme="light"]), 
-  html:not([data-theme="dark"]):not([data-theme="light"]) .wp-block-image {
-    --wp--preset--color--base: var(--custom-base);
-    --wp--preset--color--contrast: var(--custom-contrast);
-    --wp--preset--color--accent-1: var(--custom-accent-1);
-    --wp--preset--color--accent-2: var(--custom-accent-2);
-    --wp--preset--color--accent-3: var(--custom-accent-3);
-    --wp--preset--color--accent-4: var(--custom-accent-4);
-    --wp--preset--color--accent-5: var(--custom-accent-5);
-    --wp--preset--color--accent-6: var(--custom-accent-6);
-  }
 
-  html:not([data-theme="dark"]):not([data-theme="light"]) #header-logo img,
-  html:not([data-theme="dark"]):not([data-theme="light"]) #footer-logo img {
-    filter: invert(1);
-  }
+    html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-light {
+        display: none;
+    }
 
-html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-light {
-   display: none;
-}
+    html:not([data-theme="dark"]):not([data-theme="light"]) #header-logo img,
+    html:not([data-theme="dark"]):not([data-theme="light"]) #footer-logo img {
+        filter: invert(1);
+    }
 }
 
 /* Explicit Dark Theme */
 [data-theme="dark"] .astro-hide-on-dark {
-   display: none;
+    display: none;
 }
 
 /* Modifications when System Preference is Dark */
 @media (prefers-color-scheme: dark) {
-html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-dark {
-   display: none;
-}
+    html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-dark {
+        display: none;
+    }
 }
 
-#icon-toggle, #theme-toggle {
-   width: 24px;
-   display: grid;
-   place-items: center;
-   height: 100%;
-   color: var(--wp--preset--color--accent-4);
-   padding: 3px;
+#icon-toggle,
+#theme-toggle {
+    width: 24px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--wp--preset--color--accent-4);
+    padding: 3px;
 }
 
 #icon-toggle:hover,
 #theme-toggle:hover,
 #theme-reset:hover {
-   color: color-mix(in srgb, var(--wp--preset--color--accent-4) 85%, transparent);
-   background-color: color-mix(in srgb, var(--wp--preset--color--accent-4) 10%, transparent);
-   border-radius: 5px;
+    color: color-mix(in srgb, var(--wp--preset--color--accent-4) 85%, transparent);
+    background-color: color-mix(in srgb, var(--wp--preset--color--accent-4) 10%, transparent);
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -105,5 +110,5 @@ html:not([data-theme="dark"]):not([data-theme="light"]) .astro-hide-on-dark {
 }
 
 html:not([data-theme]) #theme-reset {
-  visibility: hidden;
+    visibility: hidden;
 }
